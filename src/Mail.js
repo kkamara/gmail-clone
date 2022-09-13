@@ -3,6 +3,7 @@ import './Mail.css'
 
 function Mail() {
   return <div className='mail'>
+    <h1>test</h1>
   </div>
 }
 

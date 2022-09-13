@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate, } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton'
 import Checkbox from '@material-ui/core/Checkbox'
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined'
@@ -7,7 +8,9 @@ import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutline
 import './EmailRow.css'
 
 function EmailRow({ id, title, subject, description, time, }) {
-  return <div className='emailRow'>
+  const navigate = useNavigate()
+
+  return <div onClick={() => navigate('/mail')} className='emailRow'>
     <div className='emailRow__options'>
       <Checkbox />
       <IconButton>
@@ -17,12 +20,18 @@ function EmailRow({ id, title, subject, description, time, }) {
         <LabelImportantOutlinedIcon />
       </IconButton>
     </div>
-    <div className='emailRow__title'>
-    </div>
+    <h3 className='emailRow__title'>
+      {title}
+    </h3>
     <div className='emailRow__message'>
+      <h4>{subject}</h4>
+      <span className='emailRow__description'>
+        {description}
+      </span>
     </div>
-    <div className='emailRow__description'>
-    </div>
+    <p className='emailRow__time'>
+      {time}
+    </p>
   </div>
 }
 
