@@ -4,6 +4,7 @@ import Header from './Header'
 import SideBar from './SideBar'
 import Mail from './Mail'
 import EmailList from './EmailList'
+/* import SendMail from './SendMail' */
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,7 +16,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
+    <Router basename={'/gmail-clone/'}>
       <div className="app">
         <Header />
 
@@ -26,6 +27,8 @@ function App() {
             <Route path='/' element={<EmailList />} />
           </Routes>
         </div>
+
+        {/* <SendMail/> */}
       </div>
     </Router>
   )
