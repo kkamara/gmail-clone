@@ -4,19 +4,23 @@ import Header from './Header'
 import SideBar from './SideBar'
 import Mail from './Mail'
 import EmailList from './EmailList'
-/* import SendMail from './SendMail' */
+import SendMail from './SendMail'
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link,
 } from 'react-router-dom'
+import { useSelector, } from 'react-redux'
+import { selectSendMessageIsOpen, } from './features/mailSlice'
 
 import './App.css'
 
 function App() {
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
+
   return (
-    <Router basename={'/gmail-clone/'}>
+    <Router basename='/gmail-clone/'>
       <div className="app">
         <Header />
 
@@ -28,7 +32,7 @@ function App() {
           </Routes>
         </div>
 
-        {/* <SendMail/> */}
+        {sendMessageIsOpen && <SendMail /> }
       </div>
     </Router>
   )

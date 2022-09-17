@@ -1,6 +1,6 @@
 .sendMail {
   position: absolute;
-  position: 4px;
+  bottom: 0px;
   right: 50px;
   background-color: #404040;
   width: 40%;
@@ -20,4 +20,37 @@
   justify-content: space-between;
   align-items: center;
   color: gray;
+}
+
+.sendMail__header > h3 {
+  color: whitesmoke;
+  font-size: 13px;
+}
+
+.sendMail__send {
+  background-color: #3079ed !important;
+  text-transform: capitalize !important;
+  margin: 15px !important;
+}
+
+.sendMail__close {
+  cursor: pointer;
+}
+
+.sendMail > form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.sendMail > form > input {
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  outline: none;
+}
+
+.sendMail__mesage {
+  flex: 1;
 }
